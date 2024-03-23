@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187918761}
+  - component: {fileID: 187918762}
   m_Layer: 0
   m_Name: CameraPivot
   m_TagString: Untagged
@@ -148,13 +149,26 @@ Transform:
   m_GameObject: {fileID: 187918760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.89, y: 1.83, z: 3.91}
+  m_LocalPosition: {x: -9.3, y: 4.242, z: -3.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187918762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187918760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f7f5db8e9bd5b4691b7aaf3eb3c062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 343884712}
 --- !u!1 &284464435
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +246,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7d5b50772bb482b418708b621a2c9e0b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a2079a89bd4be24984fc14aae652050, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -276,10 +290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CategoryHash: 1.0429618e-14
-  m_labelHash: 4.4141676e-13
+  m_CategoryHash: 7.68527e-31
+  m_labelHash: 0.0000000034432317
   m_SpriteKey: 0
-  m_SpriteHash: 0
+  m_SpriteHash: 341826736
 --- !u!114 &284464440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +385,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 2.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -396,7 +410,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.26041025, y: 0.23397155, z: -0.06520278, w: 0.93444765}
-  m_LocalPosition: {x: 0.26, y: 0.58, z: -9.74}
+  m_LocalPosition: {x: 0.51, y: 1.45, z: -9.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
