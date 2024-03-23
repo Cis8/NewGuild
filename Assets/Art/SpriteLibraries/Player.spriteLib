@@ -253,6 +253,102 @@ MonoBehaviour:
         type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 4
+  - m_Name: IdleN
+    m_Hash: 799435840
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IdleN
+      m_Hash: 799435840
+      m_Sprite: {fileID: 21300000, guid: e45a7c3ac9b850d488f8d00d32e09b05, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: e45a7c3ac9b850d488f8d00d32e09b05,
+        type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: IdleNE
+    m_Hash: 579321198
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IdleNE
+      m_Hash: 579321198
+      m_Sprite: {fileID: 21300000, guid: ae3e42a82c7679b4aa2fb066838a3268, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: ae3e42a82c7679b4aa2fb066838a3268,
+        type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: IdleE
+    m_Hash: 947172808
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IdleE
+      m_Hash: 947172808
+      m_Sprite: {fileID: 21300000, guid: 31cd5217a75c97249ad1987765262ff2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 31cd5217a75c97249ad1987765262ff2,
+        type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: IdleSE
+    m_Hash: 501993842
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IdleSE
+      m_Hash: 501993842
+      m_Sprite: {fileID: 21300000, guid: 6feea37253728c84eb9e155511f4ab80, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 6feea37253728c84eb9e155511f4ab80,
+        type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: IdleS
+    m_Hash: 211812505
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IdleS
+      m_Hash: 211812505
+      m_Sprite: {fileID: 21300000, guid: 7cd7aa9d70610b947a55b140bf6dbeaf, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 7cd7aa9d70610b947a55b140bf6dbeaf,
+        type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: IdleSW
+    m_Hash: 777166906
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IdleSW
+      m_Hash: 777166906
+      m_Sprite: {fileID: 21300000, guid: 8bda969df276b654eac2c74867ae26b6, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 8bda969df276b654eac2c74867ae26b6,
+        type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: IdleW
+    m_Hash: 198034560
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IdleW
+      m_Hash: 198034560
+      m_Sprite: {fileID: 21300000, guid: be4d4046b1ad47a4b90a6647d936a810, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: be4d4046b1ad47a4b90a6647d936a810,
+        type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: IdleNW
+    m_Hash: 289328166
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: IdleNW
+      m_Hash: 289328166
+      m_Sprite: {fileID: 21300000, guid: ed0a58d44903e9544ad0471450c7a84a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: ed0a58d44903e9544ad0471450c7a84a,
+        type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638466606093403690
+  m_ModificationHash: 638468037686485128
   m_Version: 1

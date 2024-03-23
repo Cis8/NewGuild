@@ -18,6 +18,15 @@ namespace NewGuild.Combat
         private static readonly int RunW = Animator.StringToHash("RunW");
         private static readonly int RunNW = Animator.StringToHash("RunNW");
 
+        private static readonly int IdleN = Animator.StringToHash("IdleN");
+        private static readonly int IdleNE = Animator.StringToHash("IdleNE");
+        private static readonly int IdleE = Animator.StringToHash("IdleE");
+        private static readonly int IdleSE = Animator.StringToHash("IdleSE");
+        private static readonly int IdleS = Animator.StringToHash("IdleS");
+        private static readonly int IdleSW = Animator.StringToHash("IdleSW");
+        private static readonly int IdleW = Animator.StringToHash("IdleW");
+        private static readonly int IdleNW = Animator.StringToHash("IdleNW");
+
         [SerializeField]
         private Animator _animator;
 
@@ -28,6 +37,7 @@ namespace NewGuild.Combat
         }
 
         void Update() {
+            CheckIdleAnimation();
             CheckRunAnimation();
         }
 
@@ -56,6 +66,27 @@ namespace NewGuild.Combat
             } else if (PlayerState.CurrentState == PlayerState.State.RunningNW) {
                 _animator.Play(RunNW);
                 return true;
+            }
+            return false;
+        }
+
+        private bool CheckIdleAnimation() {
+            if (PlayerState.CurrentState == PlayerState.State.IdleN) {
+                _animator.Play(IdleN);
+            } else if (PlayerState.CurrentState == PlayerState.State.IdleNE) {
+                _animator.Play(IdleNE);
+            } else if (PlayerState.CurrentState == PlayerState.State.IdleE) {
+                _animator.Play(IdleE);
+            } else if (PlayerState.CurrentState == PlayerState.State.IdleSE) {
+                _animator.Play(IdleSE);
+            } else if (PlayerState.CurrentState == PlayerState.State.IdleS) {
+                _animator.Play(IdleS);
+            } else if (PlayerState.CurrentState == PlayerState.State.IdleSW) {
+                _animator.Play(IdleSW);
+            } else if (PlayerState.CurrentState == PlayerState.State.IdleW) {
+                _animator.Play(IdleW);
+            } else if (PlayerState.CurrentState == PlayerState.State.IdleNW) {
+                _animator.Play(IdleNW);
             }
             return false;
         }

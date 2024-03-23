@@ -64,6 +64,9 @@ namespace NewGuild.Combat
                     case Direction.W:
                         CurrentState = State.RunningW;
                         break;
+                    case Direction.NW:
+                        CurrentState = State.RunningNW;
+                        break;
                 }
             } else if(IsIdle()) {
                 switch (playerDirection) {
@@ -87,6 +90,9 @@ namespace NewGuild.Combat
                         break;
                     case Direction.W:
                         CurrentState = State.IdleW;
+                        break;
+                    case Direction.NW:
+                        CurrentState = State.IdleNW;
                         break;
                 }
             }
