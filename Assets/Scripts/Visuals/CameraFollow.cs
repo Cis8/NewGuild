@@ -7,7 +7,7 @@ namespace NewGuild
     public class CameraFollow : MonoBehaviour
     {
         [SerializeField] private Transform _target;
-        Vector3 _offset = new Vector3(-9.3f, 4.2f, -3.3f);
+        Vector3 _offset = new Vector3(-2.1f, -4.25f, -3.263f);
 
         public Vector3 Offset { get => _offset; set => _offset = value; }
         public Transform Target { get => _target; set => _target = value; }

@@ -33,7 +33,7 @@ namespace NewGuild.Combat
 
         public Vector3 GetMovementVector() {
             var inputVector = PlayerInputActions.Player.Run.ReadValue<Vector2>();
-            return new Vector3(inputVector.x, 0, inputVector.y).ToIso();
+            return new Vector3(inputVector.x, inputVector.y, 0).ToIso();
         }
 
         public Direction GetDirection() {
