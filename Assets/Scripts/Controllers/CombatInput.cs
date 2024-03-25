@@ -23,39 +23,37 @@ namespace NewGuild.Combat
         private PlayerInputActions _playerInputActions;
         private Direction _lastDirection;
 
-        public PlayerInputActions PlayerInputActions { get => _playerInputActions; set => _playerInputActions = value; }
-        public Direction LastDirection { get => _lastDirection; set => _lastDirection = value; }
 
         private void Awake() {
-            PlayerInputActions = new PlayerInputActions();
-            PlayerInputActions.Player.Enable();
+            _playerInputActions = new PlayerInputActions();
+            _playerInputActions.Player.Enable();
         }
 
         public Vector3 GetMovementVector() {
-            var inputVector = PlayerInputActions.Player.Run.ReadValue<Vector2>();
+            var inputVector = _playerInputActions.Player.Run.ReadValue<Vector2>();
             return new Vector3(inputVector.x, inputVector.y, 0).ToIso();
         }
 
         public Direction GetDirection() {
-            Vector2 inputVector = PlayerInputActions.Player.Run.ReadValue<Vector2>();
+            Vector2 inputVector = _playerInputActions.Player.Run.ReadValue<Vector2>();
             if (inputVector.x > 0 && inputVector.y > 0) {
-                LastDirection = Direction.NE;
+                _lastDirection = Direction.NE;
             } else if (inputVector.x > 0 && inputVector.y < 0) {
-                LastDirection = Direction.SE;
+                _lastDirection = Direction.SE;
             } else if (inputVector.x < 0 && inputVector.y < 0) {
-                LastDirection = Direction.SW;
+                _lastDirection = Direction.SW;
             } else if (inputVector.x < 0 && inputVector.y > 0) {
-                LastDirection = Direction.NW;
+                _lastDirection = Direction.NW;
             } else if (inputVector.x > 0) {
-                LastDirection = Direction.E;
+                _lastDirection = Direction.E;
             } else if (inputVector.x < 0) {
-                LastDirection = Direction.W;
+                _lastDirection = Direction.W;
             } else if (inputVector.y > 0) {
-                LastDirection = Direction.N;
+                _lastDirection = Direction.N;
             } else if (inputVector.y < 0) {
-                LastDirection = Direction.S;
+                _lastDirection = Direction.S;
             }
-            return LastDirection;
+            return _lastDirection;
         }
     }
 }

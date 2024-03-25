@@ -8,9 +8,12 @@ namespace NewGuild.Combat
     {
         [SerializeField] private CombatInput _combatInput;
         [SerializeField] private float _movementSpeed;
+        [SerializeField] private PlayerCollider _playerCollider;
 
-        public CombatInput CombatInput { get => _combatInput; set => _combatInput = value; }
-        public float MovementSpeed { get => _movementSpeed; set => _movementSpeed = value; }
+        public float MovementSpeed { get => _movementSpeed; private set => _movementSpeed = value; }
+
+        private void Awake() {
+        }
 
         void Start()
         {
@@ -18,8 +21,25 @@ namespace NewGuild.Combat
         }
 
         void Update()
-        {           
-            transform.position += CombatInput.GetMovementVector() * Time.deltaTime * MovementSpeed;
+        {
+            if (_playerCollider.CanMove(_combatInput.GetMovementVector())) {
+                Debug.Log("Can move Composed");
+                Move(_combatInput.GetMovementVector());
+            } else if (_playerCollider.CanMoveX(_combatInput.GetMovementVector())) {
+                Debug.Log("Can move X");
+                Move(new Vector3(_combatInput.GetMovementVector().x, 0, 0));
+            } else if (_playerCollider.CanMoveY(_combatInput.GetMovementVector())) {
+                Debug.Log("Can move Y");
+                Move(new Vector3(0, _combatInput.GetMovementVector().y, 0));
+            }
+        }
+
+        private void Move(Vector3 movementVector) {
+            transform.position += movementVector * Time.deltaTime * _movementSpeed;
+        }
+
+        public Vector3 GetDirectionV3() {
+            return _combatInput.GetMovementVector();
         }
     }
 }

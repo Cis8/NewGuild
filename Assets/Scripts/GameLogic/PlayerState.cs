@@ -31,16 +31,14 @@ namespace NewGuild.Combat
         private float _lockedTill;
         private State _currentState;
 
-        public CombatInput CombatInput { get => _combatInput; set => _combatInput = value; }
         public State CurrentState { get => _currentState; private set => _currentState = value; }
-        public float LockedTill { get => _lockedTill; set => _lockedTill = value; }
 
         void Start() {
             
         }
 
         void Update() {
-            var playerDirection = CombatInput.GetDirection();
+            var playerDirection = _combatInput.GetDirection();
             if (IsRunning()) {
                 switch (playerDirection) {
                     case Direction.N:
@@ -100,15 +98,15 @@ namespace NewGuild.Combat
 
         // TODO maybe could be the default return in the firewall pattern? In such case remove this method
         private bool IsIdle() {
-            return !IsStateLocked() && CombatInput.GetMovementVector().magnitude == 0;
+            return !IsStateLocked() && _combatInput.GetMovementVector().magnitude == 0;
         }
 
         private bool IsRunning() {
-            return !IsStateLocked() && CombatInput.GetMovementVector().magnitude > 0;
+            return !IsStateLocked() && _combatInput.GetMovementVector().magnitude > 0;
         }
 
         private bool IsStateLocked() {
-            return Time.time < LockedTill;
+            return Time.time < _lockedTill;
         }
     }
 }

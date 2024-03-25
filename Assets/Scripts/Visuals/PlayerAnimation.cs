@@ -30,8 +30,6 @@ namespace NewGuild.Combat
         [SerializeField]
         private Animator _animator;
 
-        public PlayerState PlayerState { get => _playerState; set => _playerState = value; }
-
         void Start() {
             
         }
@@ -42,28 +40,28 @@ namespace NewGuild.Combat
         }
 
         private bool CheckRunAnimation() {
-            if (PlayerState.CurrentState == PlayerState.State.RunningN) {
+            if (_playerState.CurrentState == PlayerState.State.RunningN) {
                 _animator.Play(RunN);
                 return true;
-            } else if (PlayerState.CurrentState == PlayerState.State.RunningNE) {
+            } else if (_playerState.CurrentState == PlayerState.State.RunningNE) {
                 _animator.Play(RunNE);
                 return true;
-            } else if (PlayerState.CurrentState == PlayerState.State.RunningE) {
+            } else if (_playerState.CurrentState == PlayerState.State.RunningE) {
                 _animator.Play(RunE);
                 return true;
-            } else if (PlayerState.CurrentState == PlayerState.State.RunningSE) {
+            } else if (_playerState.CurrentState == PlayerState.State.RunningSE) {
                 _animator.Play(RunSE);
                 return true;
-            } else if (PlayerState.CurrentState == PlayerState.State.RunningS) {
+            } else if (_playerState.CurrentState == PlayerState.State.RunningS) {
                 _animator.Play(RunS);
                 return true;
-            } else if (PlayerState.CurrentState == PlayerState.State.RunningSW) {
+            } else if (_playerState.CurrentState == PlayerState.State.RunningSW) {
                 _animator.Play(RunSW);
                 return true;
-            } else if (PlayerState.CurrentState == PlayerState.State.RunningW) {
+            } else if (_playerState.CurrentState == PlayerState.State.RunningW) {
                 _animator.Play(RunW);
                 return true;
-            } else if (PlayerState.CurrentState == PlayerState.State.RunningNW) {
+            } else if (_playerState.CurrentState == PlayerState.State.RunningNW) {
                 _animator.Play(RunNW);
                 return true;
             }
@@ -71,21 +69,21 @@ namespace NewGuild.Combat
         }
 
         private bool CheckIdleAnimation() {
-            if (PlayerState.CurrentState == PlayerState.State.IdleN) {
+            if (_playerState.CurrentState == PlayerState.State.IdleN) {
                 _animator.Play(IdleN);
-            } else if (PlayerState.CurrentState == PlayerState.State.IdleNE) {
+            } else if (_playerState.CurrentState == PlayerState.State.IdleNE) {
                 _animator.Play(IdleNE);
-            } else if (PlayerState.CurrentState == PlayerState.State.IdleE) {
+            } else if (_playerState.CurrentState == PlayerState.State.IdleE) {
                 _animator.Play(IdleE);
-            } else if (PlayerState.CurrentState == PlayerState.State.IdleSE) {
+            } else if (_playerState.CurrentState == PlayerState.State.IdleSE) {
                 _animator.Play(IdleSE);
-            } else if (PlayerState.CurrentState == PlayerState.State.IdleS) {
+            } else if (_playerState.CurrentState == PlayerState.State.IdleS) {
                 _animator.Play(IdleS);
-            } else if (PlayerState.CurrentState == PlayerState.State.IdleSW) {
+            } else if (_playerState.CurrentState == PlayerState.State.IdleSW) {
                 _animator.Play(IdleSW);
-            } else if (PlayerState.CurrentState == PlayerState.State.IdleW) {
+            } else if (_playerState.CurrentState == PlayerState.State.IdleW) {
                 _animator.Play(IdleW);
-            } else if (PlayerState.CurrentState == PlayerState.State.IdleNW) {
+            } else if (_playerState.CurrentState == PlayerState.State.IdleNW) {
                 _animator.Play(IdleNW);
             }
             return false;
