@@ -23,13 +23,10 @@ namespace NewGuild.Combat
         void Update()
         {
             if (_playerCollider.CanMove(_combatInput.GetMovementVector())) {
-                Debug.Log("Can move Composed");
                 Move(_combatInput.GetMovementVector());
             } else if (_playerCollider.CanMoveX(_combatInput.GetMovementVector())) {
-                Debug.Log("Can move X");
                 Move(new Vector3(_combatInput.GetMovementVector().x, 0, 0));
             } else if (_playerCollider.CanMoveY(_combatInput.GetMovementVector())) {
-                Debug.Log("Can move Y");
                 Move(new Vector3(0, _combatInput.GetMovementVector().y, 0));
             }
         }
