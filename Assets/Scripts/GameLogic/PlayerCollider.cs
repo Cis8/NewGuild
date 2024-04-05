@@ -7,7 +7,7 @@ namespace NewGuild.Combat
 {
     public class PlayerCollider : MonoBehaviour
     {
-        [SerializeField] private Player _player;
+        [SerializeField] private PlayerMovement _player;
         private CircleCollider2D _playerCollider;
         private float _radiusReductionForCast = 0.03f;
 

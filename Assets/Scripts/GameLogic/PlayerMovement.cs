@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace NewGuild.Combat
 {
-    public class Player : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private CombatInput _combatInput;
         [SerializeField] private float _movementSpeed;
