@@ -1,4 +1,6 @@
 using NewGuild.Combat;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +10,15 @@ namespace NewGuild.Combat
     public class EntityMovement : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed;
-        [SerializeField, SerializeReference] private IMovable _movementInput;
+        private IMovable _movementInput;
         [SerializeField] private EnvironmentCollision _playerEnvironmentCollision;
+
 
         public float MovementSpeed { get => _movementSpeed; private set => _movementSpeed = value; }
 
+        private void Awake() {
+            _movementInput = GetComponent<IMovable>();
+        }
 
         void Start() {
         
