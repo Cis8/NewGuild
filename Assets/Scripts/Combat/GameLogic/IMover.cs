@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace NewGuild.Combat
 {
-    public interface IMovable {
+    public interface IMover {
         public Vector3 GetMovementVector();
     }
 }
