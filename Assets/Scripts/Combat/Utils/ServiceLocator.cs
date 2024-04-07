@@ -15,6 +15,12 @@ namespace NewGuild.Combat
         // services
         private Dictionary<Type, IService> _services = new Dictionary<Type, IService>();
 
+        private static void Initiailze() {
+            // Register all the services
+            //Provide(new LoggingHealthEventManager());
+            Provide(new HealthEventManager());
+        }
+
         /// <summary>
         /// Gets the service instance of the given type.
         /// </summary>
@@ -36,11 +42,6 @@ namespace NewGuild.Combat
                 }
                 return _instance;
             }
-        }
-
-        private static void Initiailze() {
-            // Register all the services
-            Provide(new LoggingHealthEventManager());
         }
 
         public static void Provide<T>(T service) where T : IService {

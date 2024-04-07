@@ -10,6 +10,7 @@ namespace NewGuild.Combat
     {
         [SerializeField] Slider _healthBar;
         [SerializeField] HealthManager _health;
+        [SerializeField] GameObject _mainGameObject;
         private HealthEventManager _healthEventManager;
 
         private void Awake() {
@@ -34,7 +35,7 @@ namespace NewGuild.Combat
         }
 
         private void SetHealth(GameObject entity, int currentHealth, int _) {
-            if (entity == gameObject) {
+            if (entity == _mainGameObject) {
                 _healthBar.value = currentHealth;
             }
         }

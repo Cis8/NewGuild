@@ -11,6 +11,10 @@ namespace NewGuild.Combat
     {
         private int _incomingAmount;
 
+        public IncomingDmg(int incomingAmount) {
+            IncomingAmount = incomingAmount;
+        }
+
         public int IncomingAmount { get => _incomingAmount; private set => _incomingAmount = value; }
     }
 }

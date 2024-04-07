@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace NewGuild.Combat
 {
+    [RequireComponent(typeof(HealthManager))]
     public class DefaultDamageManager : MonoBehaviour, IDamageable {
         [SerializeField] private HealthManager _healthManager;
 
