@@ -17,7 +17,7 @@ namespace NewGuild.Combat
         public float MovementSpeed { get => _movementSpeed; private set => _movementSpeed = value; }
 
         private void Awake() {
-            if  (TryGetComponent(out _movementInput)) {
+            if (!TryGetComponent(out _movementInput)) {
                 Debug.LogError("No IMovable component found on " + gameObject.name);
             }
         }
