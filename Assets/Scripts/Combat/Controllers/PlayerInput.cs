@@ -1,4 +1,4 @@
-using NewGuild.Utils;
+using NewGuild.Combat.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace NewGuild.Combat
         NW
     }
 
-    public class PlayerCombatInput : MonoBehaviour, IMover
+    public class PlayerInput : MonoBehaviour, IMover
     {
         private PlayerInputActions _playerInputActions;
         private Direction _lastDirection;

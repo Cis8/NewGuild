@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NewGuild.Utils
+namespace NewGuild.Combat.Utils
 {
     public static class Utils
     {

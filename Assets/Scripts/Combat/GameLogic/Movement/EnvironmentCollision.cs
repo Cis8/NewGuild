@@ -1,4 +1,4 @@
-using NewGuild.Utils;
+using NewGuild.Combat.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
