@@ -14,8 +14,9 @@ namespace NewGuild
         }
 
         void Update() {
-            transform.position = _target.position + _offset;
-        
+            if (_target) {
+                transform.position = _target.position + _offset;
+            }
         }
     }
 }
