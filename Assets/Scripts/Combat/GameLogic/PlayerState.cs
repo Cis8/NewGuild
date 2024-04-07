@@ -24,7 +24,7 @@ namespace NewGuild.Combat
             RunningS,
             RunningSW,
             RunningW,
-            RunningNW
+            RunningNW,
         }
 
         [SerializeField] private PlayerInput _combatInput;

@@ -6,7 +6,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 namespace NewGuild.Combat
 {
-    public class DefaultHealthManager : HealthManager {
+    public class DefaultHealthManager : HealthManager, IHealth {
         private HealthEventManager _healthEventManager;
 
         protected override void Awake() {
@@ -21,7 +21,7 @@ namespace NewGuild.Combat
             _health -= amount;
             if (_health <= 0) {
                 _health = 0;
-                _healthEventManager.EntityDied(gameObject);
+                Die();
             }
             _healthEventManager.EntityHealthChanged(gameObject, _health, previousHealth);
         }
@@ -35,6 +35,11 @@ namespace NewGuild.Combat
                 _health = MaxHealth;
             }
             _healthEventManager.EntityHealthChanged(gameObject, _health, previousHealth);
+        }
+
+        public override void Die() {
+            _healthEventManager.EntityDied(gameObject);
+            Destroy(gameObject);
         }
     }
 }

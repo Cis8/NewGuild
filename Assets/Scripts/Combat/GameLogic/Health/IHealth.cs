@@ -5,5 +5,7 @@ namespace NewGuild.Combat
         public void SubtractHealth(int amount);
 
         public void AddHealth(int amount);
+
+        public void Die();
     }
 }
