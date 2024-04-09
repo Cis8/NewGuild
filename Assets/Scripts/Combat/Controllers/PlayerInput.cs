@@ -18,7 +18,7 @@ namespace NewGuild.Combat
         NW
     }
 
-    public class PlayerInput : MonoBehaviour, IMoving
+    public class PlayerInput : MovementController
     {
         private PlayerInputActions _playerInputActions;
         private Direction _lastDirection;
@@ -29,7 +29,7 @@ namespace NewGuild.Combat
             _playerInputActions.Player.Enable();
         }
 
-        public Vector3 GetMovementVector() {
+        public override Vector3 GetMovementVector() {
             var inputVector = _playerInputActions.Player.Run.ReadValue<Vector2>();
             return new Vector3(inputVector.x, inputVector.y, 0).ToIso();
         }
