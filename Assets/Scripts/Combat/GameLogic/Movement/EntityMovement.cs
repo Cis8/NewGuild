@@ -10,7 +10,7 @@ namespace NewGuild.Combat
     public class EntityMovement : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed;
-        private IMover _movementInput;
+        private IMoving _movementInput;
         [SerializeField] private EnvironmentCollision _playerEnvironmentCollision;
 
 

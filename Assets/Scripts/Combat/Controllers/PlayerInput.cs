@@ -18,7 +18,7 @@ namespace NewGuild.Combat
         NW
     }
 
-    public class PlayerInput : MonoBehaviour, IMover
+    public class PlayerInput : MonoBehaviour, IMoving
     {
         private PlayerInputActions _playerInputActions;
         private Direction _lastDirection;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace NewGuild.Combat
 {
-    public interface IMover {
+    public interface IMoving {
         public Vector3 GetMovementVector();
 
         public bool IsMoving() {
