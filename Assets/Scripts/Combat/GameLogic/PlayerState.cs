@@ -98,11 +98,11 @@ namespace NewGuild.Combat
 
         // TODO maybe could be the default return in the firewall pattern? In such case remove this method
         private bool IsIdle() {
-            return !IsStateLocked() && _combatInput.GetMovementVector().magnitude == 0;
+            return !IsStateLocked() && !_combatInput.IsMoving();
         }
 
         private bool IsRunning() {
-            return !IsStateLocked() && _combatInput.GetMovementVector().magnitude > 0;
+            return !IsStateLocked() && _combatInput.IsMoving();
         }
 
         private bool IsStateLocked() {
