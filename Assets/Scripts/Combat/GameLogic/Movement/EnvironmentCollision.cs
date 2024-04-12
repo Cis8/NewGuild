@@ -37,7 +37,7 @@ namespace NewGuild.Combat
         }
 
         public bool CanMoveY(Vector3 direction) {
-            float castDistance = _entity.MovementSpeed * Time.deltaTime + 0.03f; // 0.03f is the offset to check if the player would touch the wall
+            float castDistance = _entity.MovementSpeed * Time.deltaTime + _radiusReductionForCast; // 0.03f is the offset to check if the player would touch the wall
             // a smaller radius is used to prevent the player from getting stuck in the wall
             bool canMove = !Physics2D.CircleCast(_entity.transform.position, _collider.radius - _radiusReductionForCast, new Vector3(0, direction.y, 0), castDistance, LayerMask.GetMask("Environment"));
             return canMove;
