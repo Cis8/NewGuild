@@ -14,16 +14,25 @@ namespace NewGuild.Combat.Utils
         public static bool IsDamageableOpponent(this GameObject self, GameObject other, out IDamageable damageable) {
             damageable = null;
             if (self.layer != other.layer) {
-                if (!other.TryGetComponent(out MainGameObjectRef mainGameObjectRef)) {
-                    // Throw unity exception
-                    throw new System.Exception($"MainGameObjectRef not found in {other.name}. Add the MainGameObjectRef and bind the MainGameObject for such an object.");
-                }
-                // if mainGameObject is null, throw exception
-                if (mainGameObjectRef.MainGameObject.TryGetComponent(out damageable)) {
+                if (GetMainGameObject(other).TryGetComponent(out damageable)) {
                     return true;
                 }
             }
             return false;
+        }
+
+        /// <summary>
+        /// It returns the MainGameObject of the given GameObject. If the MainGameObjectRef component is not present, it throws an exception.
+        /// </summary>
+        /// <param name="gameObject"></param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
+        public static GameObject GetMainGameObject(GameObject gameObject) {
+            if (!gameObject.TryGetComponent(out MainGameObjectRef mainGameObjectRef)) {
+                // if the component is not present, throw an exception
+                throw new System.Exception($"MainGameObjectRef not found in {gameObject.name}. Add the MainGameObjectRef and bind the MainGameObject for such an object.");
+            }
+            return mainGameObjectRef.MainGameObject;
         }
         
     }
