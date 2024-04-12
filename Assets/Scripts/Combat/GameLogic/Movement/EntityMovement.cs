@@ -31,6 +31,8 @@ namespace NewGuild.Combat
         }
 
         protected void CheckMovement() {
+            // TODO improve this so that the Player state is interrogated to determing if the player can acttually move
+            // (for example if it is stunned or is performing a blocking attack it should not be able to move)
             if (_playerEnvironmentCollision.CanMove(_movementInput.GetMovementVector())) {
                 Move(_movementInput.GetMovementVector());
             } else if (_playerEnvironmentCollision.CanMoveX(_movementInput.GetMovementVector())) {
