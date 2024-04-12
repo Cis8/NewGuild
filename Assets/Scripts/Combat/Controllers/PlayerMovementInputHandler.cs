@@ -18,7 +18,7 @@ namespace NewGuild.Combat
         NW
     }
 
-    public class PlayerInput : MovementController
+    public class PlayerMovementInputHandler : MovementHandler
     {
         private PlayerInputActions _playerInputActions;
         private Direction _lastDirection;

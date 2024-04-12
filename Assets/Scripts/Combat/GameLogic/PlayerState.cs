@@ -27,7 +27,7 @@ namespace NewGuild.Combat
             RunningNW,
         }
 
-        [SerializeField] private PlayerInput _combatInput;
+        [SerializeField] private PlayerMovementInputHandler _combatInput;
         private float _lockedTill;
         private State _currentState;
 

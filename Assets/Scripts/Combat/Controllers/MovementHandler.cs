@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace NewGuild.Combat
 {
-    public abstract class MovementController : MonoBehaviour, IMoving
+    public abstract class MovementHandler : MonoBehaviour, IMoving
     {
         protected virtual void Start() {
         
