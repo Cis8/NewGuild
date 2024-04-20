@@ -1,12 +1,9 @@
-using NewGuild.Combat;
 using NewGuild.Combat.Utils;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace NewGuild
-{
+namespace NewGuild.Combat {
     public class ThornsDamage : MonoBehaviour
     {
         [SerializeField] private int _spikesDamage;
@@ -16,7 +13,7 @@ namespace NewGuild
 
         private void CheckThornsDamage(Collider2D other) {
             if (_spikesDmgOnCooldown) return;
-            if (Utils.IsDamageableOpponent(gameObject, other.gameObject, out IDamageable dmgComponent)) {
+            if (Util.IsDamageableOpponent(gameObject, other.gameObject, out IDamageable dmgComponent)) {
                 dmgComponent.TakeDamage(new IncomingDmg(_spikesDamage));
                 _spikesDmgOnCooldown = true;
                 StartCoroutine(RunFuncAfterTime(() => _spikesDmgOnCooldown = false, _cooldown));

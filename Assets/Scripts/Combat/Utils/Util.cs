@@ -1,8 +1,10 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace NewGuild.Combat.Utils
 {
-    public static class Utils
+    public static class Util
     {
         // Camera rotation to apply the isometric regulation on the inputs
         private static Vector3 _cameraRotation = new Vector3(0f, 0f, -28.114f);
@@ -35,5 +37,10 @@ namespace NewGuild.Combat.Utils
             return mainGameObjectRef.MainGameObject;
         }
         
+
+        public static IEnumerator RunFuncAfterTime(Action func, float time) {
+            yield return new WaitForSeconds(time);
+            func();
+        }
     }
 }
