@@ -6,6 +6,8 @@ namespace NewGuild.Combat
 {
     public class PlayerState : MonoBehaviour
     {
+        // TODO refactor so that only one Idle and one Running state is used
+        // The animator will use the direction to determine the animation
         public enum State {
             // Idle states
             IdleN,
@@ -28,7 +30,7 @@ namespace NewGuild.Combat
         }
 
         [SerializeField] private PlayerMovementInputHandler _combatInput;
-        private float _lockedTill;
+        private float _lockedTill = 0;
         private State _currentState;
 
         public State CurrentState { get => _currentState; private set => _currentState = value; }
@@ -98,14 +100,14 @@ namespace NewGuild.Combat
 
         // TODO maybe could be the default return in the firewall pattern? In such case remove this method
         private bool IsIdle() {
-            return !IsStateLocked() && !_combatInput.IsMoving();
+            return !IsLocked() && !_combatInput.IsMoving();
         }
 
         private bool IsRunning() {
-            return !IsStateLocked() && _combatInput.IsMoving();
+            return !IsLocked() && _combatInput.IsMoving();
         }
 
-        private bool IsStateLocked() {
+        public bool IsLocked() {
             return Time.time < _lockedTill;
         }
     }
