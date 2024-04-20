@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 343884717}
   - component: {fileID: 343884713}
   - component: {fileID: 343884718}
+  - component: {fileID: 343884722}
   - component: {fileID: 343884719}
   - component: {fileID: 343884720}
   - component: {fileID: 343884721}
@@ -851,6 +852,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _corpse: {fileID: 4789257587370652265, guid: 543be1ed3e25df043a8d1152db4ed2fc, type: 3}
+--- !u!114 &343884722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343884711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28a2ba8e25bc894394fcfe30178a191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerState: {fileID: 343884713}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1340,7 @@ GameObject:
   - component: {fileID: 924365205}
   - component: {fileID: 924365209}
   - component: {fileID: 924365206}
+  - component: {fileID: 924365210}
   - component: {fileID: 924365208}
   m_Layer: 7
   m_Name: Collider
@@ -1423,6 +1438,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &924365210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924365204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fe33c0fb97c2f49b2b066e67403bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainGameObject: {fileID: 753163339}
 --- !u!1001 &934998329
 PrefabInstance:
   m_ObjectHideFlags: 0
