@@ -18,15 +18,14 @@ namespace NewGuild.Combat
         NW
     }
 
-    public class PlayerMovementInputHandler : MovementHandler
+    public class PlayerMovementInputHandler : MovementController
     {
         private PlayerInputActions _playerInputActions;
         private Direction _lastDirection;
 
 
         private void Awake() {
-            _playerInputActions = new PlayerInputActions();
-            _playerInputActions.Player.Enable();
+            _playerInputActions = PlayerInputActionsSingleton.Instance;
         }
 
         public override Vector3 GetMovementVector() {
