@@ -1,40 +1,23 @@
-using NewGuild.Combat.Utils;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using static NewGuild.Combat.I8Directioned;
 
 namespace NewGuild.Combat
 {
-    public enum Direction {         
-        N,
-        NE,
-        E,
-        SE,
-        S,
-        SW,
-        W,
-        NW
-    }
-
-    public class PlayerMovementInputHandler : MovementController
+    public class PlayerMovement : EntityMovement, I8Directioned
     {
-        private PlayerInputActions _playerInputActions;
         private Direction _lastDirection;
 
+        public Direction LastDirection { get => _lastDirection; private set => _lastDirection = value; }
 
-        private void Awake() {
-            _playerInputActions = PlayerInputActionsSingleton.Instance;
+        protected override void Start() {
+            base.Start();
         }
 
-        public override Vector3 GetMovementVector() {
-            var inputVector = _playerInputActions.Player.Run.ReadValue<Vector2>();
-            return new Vector3(inputVector.x, inputVector.y, 0).ToIso();
-        }
-
-        public Direction GetDirection() {
-            Vector2 inputVector = _playerInputActions.Player.Run.ReadValue<Vector2>();
+        // this method is used by the StateMachine to set the direction of the player on the Entity8Direction component
+        public Direction Direction8() {
+            Vector2 inputVector = GetDirectionV3();
             if (inputVector.x > 0 && inputVector.y > 0) {
                 _lastDirection = Direction.NE;
             } else if (inputVector.x > 0 && inputVector.y < 0) {

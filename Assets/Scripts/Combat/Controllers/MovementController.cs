@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace NewGuild.Combat
 {
-    public abstract class MovementController : MonoBehaviour, IMoving
+    public abstract class MovementController : MonoBehaviour, IMover
     {
+        public abstract UnityAction<Vector2> Move { get; set; }
+
         protected virtual void Start() {
         
         }
@@ -14,10 +17,10 @@ namespace NewGuild.Combat
         
         }
 
-        public abstract Vector3 GetMovementVector();
+        public abstract Vector3 GetMovementVectorIso();
 
         public bool IsMoving() {
-            return GetMovementVector().magnitude > 0;
+            return GetMovementVectorIso().magnitude > 0;
         }
     }
 }
