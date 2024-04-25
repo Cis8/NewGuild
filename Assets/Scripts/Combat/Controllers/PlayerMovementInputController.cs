@@ -10,9 +10,13 @@ namespace NewGuild.Combat
 {
     public class PlayerMovementInputController : MovementController
     {
-        private InputReader _inputReader;
+        [SerializeField] private InputReader _inputReader;
 
         public override UnityAction<Vector2> Move { get => _inputReader.Move; set => _inputReader.Move = value; }
+
+        public override Vector3 GetMovementVectorRaw() {
+            return _inputReader.GetMovementVector();
+        }
 
         public override Vector3 GetMovementVectorIso() {
             var inputVector = _inputReader.GetMovementVector();

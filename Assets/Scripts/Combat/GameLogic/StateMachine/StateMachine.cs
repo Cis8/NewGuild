@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NewGuild.Combat.StateMachine
+namespace NewGuild.Combat.SMachine
 {
     public class StateMachine
     {
@@ -21,6 +21,10 @@ namespace NewGuild.Combat.StateMachine
 
         public void FixedUpdate() {
             _current.State?.FixedUpdate();
+        }
+
+        public IState GetState() {
+            return _current.State;
         }
 
         public void SetState(IState state) {

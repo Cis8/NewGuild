@@ -18,6 +18,12 @@ namespace NewGuild.Combat
         public Timer MovementTimer { get => _movementTimer; private set => _movementTimer = value; }
 
         private void Awake() {
+            if (!TryGetComponent(out _movementController)) {
+                var message = "Player does not have an IMover component";
+                Debug.LogError(message);
+                throw new System.Exception(message);
+            }
+            _movementTimer = new StopwatchTimer();
             _movementController.Move += OnMove;
         }
 
@@ -26,10 +32,14 @@ namespace NewGuild.Combat
         }
 
         protected virtual void Update() {
-            
+            _movementTimer.Tick(Time.deltaTime);
         }
 
-        public Vector3 GetDirectionV3() {
+        public Vector3 GetDirectionV3Raw() {
+            return _movementController.GetMovementVectorRaw();
+        }
+
+        public Vector3 GetDirectionV3Iso() {
             return _movementController.GetMovementVectorIso();
         }
 
@@ -37,16 +47,16 @@ namespace NewGuild.Combat
         public virtual void Move() {
             // TODO improve this so that the Player state is interrogated to determing if the player can acttually move
             // (for example if it is stunned or is performing a blocking attack it should not be able to move)
-            if (_playerEnvironmentCollision.CanMove(GetDirectionV3())) {
+            if (_playerEnvironmentCollision.CanMove(GetDirectionV3Iso())) {
                 MoveEntity(_movementController.GetMovementVectorIso());
-            } else if (_playerEnvironmentCollision.CanMoveX(GetDirectionV3())) {
-                MoveEntity(new Vector3(GetDirectionV3().x, 0, 0));
-            } else if (_playerEnvironmentCollision.CanMoveY(GetDirectionV3())) {
-                MoveEntity(new Vector3(0, GetDirectionV3().y, 0));
+            } else if (_playerEnvironmentCollision.CanMoveX(GetDirectionV3Iso())) {
+                MoveEntity(new Vector3(GetDirectionV3Iso().x, 0, 0));
+            } else if (_playerEnvironmentCollision.CanMoveY(GetDirectionV3Iso())) {
+                MoveEntity(new Vector3(0, GetDirectionV3Iso().y, 0));
             }
         }
 
-        // Delegate for getting notified when the object moves
+        // Delegate for getting notified when the object expressed the intention to move
         protected void OnMove(Vector2 direction) {
             if (direction != Vector2.zero && !_movementTimer.IsRunning) {
                 _movementTimer.Start();

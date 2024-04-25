@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using IState = NewGuild.Combat.StateMachine.IState;
+using IState = NewGuild.Combat.SMachine.IState;
 
 namespace NewGuild.Combat
 {

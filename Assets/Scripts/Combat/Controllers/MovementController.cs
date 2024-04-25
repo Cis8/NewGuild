@@ -19,6 +19,8 @@ namespace NewGuild.Combat
 
         public abstract Vector3 GetMovementVectorIso();
 
+        public abstract Vector3 GetMovementVectorRaw();
+
         public bool IsMoving() {
             return GetMovementVectorIso().magnitude > 0;
         }

@@ -25,7 +25,7 @@ namespace NewGuild.Combat
 
         public bool CanMove(Vector3 direction) {
             float castDistance = _entity.MovementSpeed * Time.deltaTime;
-            bool canMove = !Physics2D.CircleCast(_entity.transform.position, _collider.radius, _entity.GetDirectionV3(), castDistance, LayerMask.GetMask("Environment"));
+            bool canMove = !Physics2D.CircleCast(_entity.transform.position, _collider.radius, _entity.GetDirectionV3Iso(), castDistance, LayerMask.GetMask("Environment"));
             return canMove;
         }
 

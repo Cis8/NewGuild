@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace NewGuild.Combat
 
         // this method is used by the StateMachine to set the direction of the player on the Entity8Direction component
         public Direction Direction8() {
-            Vector2 inputVector = GetDirectionV3();
+            Vector2 inputVector = GetDirectionV3Raw();
             if (inputVector.x > 0 && inputVector.y > 0) {
                 _lastDirection = Direction.NE;
             } else if (inputVector.x > 0 && inputVector.y < 0) {

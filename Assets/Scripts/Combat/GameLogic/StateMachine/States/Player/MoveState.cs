@@ -1,4 +1,4 @@
-using NewGuild.Combat.StateMachine;
+using NewGuild.Combat.SMachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -20,8 +20,8 @@ namespace NewGuild.Combat
         private PlayerMovement _playerMovement;
 
         public MoveState(GameObject player, Animator animator) : base(player, animator) {
-            if (!_playerMovement.TryGetComponent(out _playerMovement)) {
-                var message = "PlayerMovementInputController not found";
+            if (!player.TryGetComponent(out _playerMovement)) {
+                var message = "PlayerMovement not found";
                 Debug.LogError(message);
                 throw new System.Exception(message);
             }

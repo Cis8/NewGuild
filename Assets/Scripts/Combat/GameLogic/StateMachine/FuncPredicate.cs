@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NewGuild.Combat.StateMachine
+namespace NewGuild.Combat.SMachine
 {
     public class FuncPredicate : IPredicate
     {

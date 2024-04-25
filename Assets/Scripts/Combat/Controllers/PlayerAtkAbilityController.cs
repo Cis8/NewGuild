@@ -8,7 +8,7 @@ namespace NewGuild.Combat
 {
     public class PlayerAtkAbilityController : AtkAbilityController {
 
-        [SerializeField] private PlayerState _playerState;
+        //[SerializeField] private PlayerState _playerState;
         //private InputReader _playerInputActions;
 
         public override void ExecuteAttack() {
