@@ -7,25 +7,7 @@ namespace NewGuild.Combat
 {
     public class PlayerAnimation : MonoBehaviour
     {
-        [SerializeField] private PlayerState _playerState;
-
-        private static readonly int RunN = Animator.StringToHash("RunN");
-        private static readonly int RunNE = Animator.StringToHash("RunNE");
-        private static readonly int RunE = Animator.StringToHash("RunE");
-        private static readonly int RunSE = Animator.StringToHash("RunSE");
-        private static readonly int RunS = Animator.StringToHash("RunS");
-        private static readonly int RunSW = Animator.StringToHash("RunSW");
-        private static readonly int RunW = Animator.StringToHash("RunW");
-        private static readonly int RunNW = Animator.StringToHash("RunNW");
-
-        private static readonly int IdleN = Animator.StringToHash("IdleN");
-        private static readonly int IdleNE = Animator.StringToHash("IdleNE");
-        private static readonly int IdleE = Animator.StringToHash("IdleE");
-        private static readonly int IdleSE = Animator.StringToHash("IdleSE");
-        private static readonly int IdleS = Animator.StringToHash("IdleS");
-        private static readonly int IdleSW = Animator.StringToHash("IdleSW");
-        private static readonly int IdleW = Animator.StringToHash("IdleW");
-        private static readonly int IdleNW = Animator.StringToHash("IdleNW");
+        //[SerializeField] private PlayerState _playerState;
 
         [SerializeField]
         private Animator _animator;
@@ -35,11 +17,11 @@ namespace NewGuild.Combat
         }
 
         void Update() {
-            CheckIdleAnimation();
-            CheckRunAnimation();
+            //CheckIdleAnimation();
+            //CheckRunAnimation();
         }
 
-        private bool CheckRunAnimation() {
+        /*private bool CheckRunAnimation() {
             if (_playerState.CurrentState == PlayerState.State.RunningN) {
                 _animator.Play(RunN);
                 return true;
@@ -87,7 +69,7 @@ namespace NewGuild.Combat
                 _animator.Play(IdleNW);
             }
             return false;
-        }
+        }*/
 
         public void PlayAnimation() {
 

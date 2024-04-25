@@ -8,7 +8,7 @@ namespace NewGuild.Combat
     {
         // TODO refactor so that only one Idle and one Running state is used
         // The animator will use the direction to determine the animation
-        public enum State {
+        /*public enum State {
             // Idle states
             IdleN,
             IdleNE,
@@ -29,7 +29,7 @@ namespace NewGuild.Combat
             RunningNW,
         }
 
-        [SerializeField] private PlayerMovementInputHandler _combatInput;
+        [SerializeField] private PlayerMovementInputController _combatInput;
         private float _lockedTill = 0;
         private State _currentState;
 
@@ -109,6 +109,6 @@ namespace NewGuild.Combat
 
         public bool IsLocked() {
             return Time.time < _lockedTill;
-        }
+        }/**/
     }
 }

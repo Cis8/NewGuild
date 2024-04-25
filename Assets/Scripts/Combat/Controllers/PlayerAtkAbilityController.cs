@@ -9,11 +9,7 @@ namespace NewGuild.Combat
     public class PlayerAtkAbilityController : AtkAbilityController {
 
         [SerializeField] private PlayerState _playerState;
-        private PlayerInputActions _playerInputActions;
-
-        void Awake() {
-            _playerInputActions = PlayerInputActionsSingleton.Instance;
-        }
+        //private InputReader _playerInputActions;
 
         public override void ExecuteAttack() {
             Debug.Log("Attack!");
@@ -31,7 +27,7 @@ namespace NewGuild.Combat
         }
 
         protected override void Update() {
-            if (!_playerState.IsLocked()) {
+            /*if (!_playerState.IsLocked()) {
                 Debug.Log("PlayerAtkAbilityController Update");
                 if (_playerInputActions.Player.Attack.IsPressed()) {
                     ExecuteAttack();
@@ -39,7 +35,7 @@ namespace NewGuild.Combat
                 if (_playerInputActions.Player.Ability.IsPressed()) {
                     CastAbility();
                 }
-            }
+            }*/
         }
     }
 }
