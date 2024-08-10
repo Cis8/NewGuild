@@ -10,6 +10,7 @@ namespace NewGuild.Combat.Skills {
         [NonSerialized] private GameObject _self;
 
         private float _cooldown;
+        private Animator _animator;
 
         [NonSerialized] private bool _onCooldown = false;
 
@@ -45,9 +46,13 @@ namespace NewGuild.Combat.Skills {
         }
 
         protected void DealDamage(GameObject other, IncomingDmg dmgInfo) {
-            if (Util.IsDamageableOpponent(_self, other, out IDamageable dmgComponent)) {
+            if (other != null && Util.IsDamageableOpponent(_self, other, out IDamageable dmgComponent)) {
                 dmgComponent.TakeDamage(dmgInfo);
             }
+        }
+
+        protected void PlayAnimation(int animation) {
+            _animator.Play(animation);
         }
 
         protected void EnableGO(GameObject toEnable) {
