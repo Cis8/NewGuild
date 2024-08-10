@@ -10,7 +10,7 @@ namespace NewGuild.Combat
         [SerializeField] private PlayerMovement _playerMovement;
         [SerializeField] private Animator _animator;
 
-        StateMachine _stateMachine;
+        private StateMachine _stateMachine;
 
         void At(IState from, IState to, IPredicate condition) => _stateMachine.AddTransition(from, to, condition);
         void Any(IState to, IPredicate condition) => _stateMachine.AddAnyTransition(to, condition);

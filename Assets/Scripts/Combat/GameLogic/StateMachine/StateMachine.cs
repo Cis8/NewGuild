@@ -7,6 +7,20 @@ namespace NewGuild.Combat.SMachine
 {
     public class StateMachine
     {
+        class StateNode {
+            public IState State { get; }
+            public HashSet<ITransition> Transitions { get; }
+
+            public StateNode(IState state) {
+                State = state;
+                Transitions = new HashSet<ITransition>();
+            }
+
+            public void AddTransition(IState to, IPredicate condition) {
+                Transitions.Add(new Transition(to, condition));
+            }
+        }
+
         StateNode _current;
         Dictionary<Type, StateNode> _nodes = new();
         HashSet<ITransition> _anyTransitions = new();
@@ -70,20 +84,6 @@ namespace NewGuild.Combat.SMachine
             }
 
             return node;
-        }
-
-        class StateNode {
-            public IState State { get; }
-            public HashSet<ITransition> Transitions { get; }
-
-            public StateNode(IState state) {
-                State = state;
-                Transitions = new HashSet<ITransition>();
-            }
-
-            public void AddTransition(IState to, IPredicate condition) {
-                Transitions.Add(new Transition(to, condition));
-            }
         }
     }
 }

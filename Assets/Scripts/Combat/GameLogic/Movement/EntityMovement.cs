@@ -10,7 +10,7 @@ namespace NewGuild.Combat
     {
         [SerializeField] private float _movementSpeed;
         protected IMover _movementController;
-        [SerializeField] private EnvironmentCollision _playerEnvironmentCollision;
+        [SerializeField] private EnvironmentCollision _entityEnvironmentCollision;
         private Timer _movementTimer;
 
 
@@ -45,13 +45,13 @@ namespace NewGuild.Combat
 
         // this method is called by the StateMachine to move the entity
         public virtual void Move() {
-            // TODO improve this so that the Player state is interrogated to determing if the player can acttually move
+            // TODO improve this so that the Entity state is interrogated to determing if the player can actually move
             // (for example if it is stunned or is performing a blocking attack it should not be able to move)
-            if (_playerEnvironmentCollision.CanMove(GetDirectionV3Iso())) {
+            if (_entityEnvironmentCollision.CanMove(GetDirectionV3Iso())) {
                 MoveEntity(_movementController.GetMovementVectorIso());
-            } else if (_playerEnvironmentCollision.CanMoveX(GetDirectionV3Iso())) {
+            } else if (_entityEnvironmentCollision.CanMoveX(GetDirectionV3Iso())) {
                 MoveEntity(new Vector3(GetDirectionV3Iso().x, 0, 0));
-            } else if (_playerEnvironmentCollision.CanMoveY(GetDirectionV3Iso())) {
+            } else if (_entityEnvironmentCollision.CanMoveY(GetDirectionV3Iso())) {
                 MoveEntity(new Vector3(0, GetDirectionV3Iso().y, 0));
             }
         }
