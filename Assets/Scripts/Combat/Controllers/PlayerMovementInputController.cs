@@ -12,6 +12,11 @@ namespace NewGuild.Combat
     {
         [SerializeField] private InputReader _inputReader;
 
+        protected override void Start() {
+            base.Start();
+            _inputReader.EnablePlayerActions();
+        }
+
         public override UnityAction<Vector2> Move { get => _inputReader.Move; set => _inputReader.Move = value; }
 
         public override Vector3 GetMovementVectorRaw() {

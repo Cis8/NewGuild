@@ -9,7 +9,6 @@ namespace NewGuild.Combat
     {
         [SerializeField] private PlayerMovement _playerMovement;
         [SerializeField] private Animator _animator;
-        [SerializeField] private InputReader _inputReader;
 
         StateMachine _stateMachine;
 
@@ -39,7 +38,7 @@ namespace NewGuild.Combat
         }
 
         void Start() {
-            _inputReader.EnablePlayerActions();
+
         }
 
         void Update() {
