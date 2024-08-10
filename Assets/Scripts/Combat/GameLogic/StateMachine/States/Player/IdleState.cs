@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static NewGuild.Combat.I8Directioned;
 
-namespace NewGuild.Combat
+namespace NewGuild.Combat.SMachine.Player
 {
     public class IdleState : BaseState {
         private static readonly int IdleN = Animator.StringToHash("IdleN");

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using IState = NewGuild.Combat.SMachine.IState;
 
-namespace NewGuild.Combat
+namespace NewGuild.Combat.SMachine.Player
 {
     public abstract class BaseState : IState {
         protected readonly Entity8Direction _entity8Direction;

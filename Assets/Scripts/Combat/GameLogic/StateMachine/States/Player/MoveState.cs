@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static NewGuild.Combat.I8Directioned;
 
-namespace NewGuild.Combat
+namespace NewGuild.Combat.SMachine.Player
 {
     public class MoveState : BaseState {
         private static readonly int RunN = Animator.StringToHash("RunN");
