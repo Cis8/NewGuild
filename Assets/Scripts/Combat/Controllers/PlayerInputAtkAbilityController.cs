@@ -3,21 +3,18 @@ using NewGuild.Combat.Skills;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace NewGuild.Combat
 {
-    public class PlayerAtkAbilityController : AtkAbilityController {
+    public class PlayerInputAtkAbilityController : AtkAbilityController {
 
-        //[SerializeField] private PlayerState _playerState;
-        //private InputReader _playerInputActions;
+        [SerializeField] private InputReader _inputReader;
 
-        public override void ExecuteAttack() {
-            Debug.Log("Attack!");
-        }
+        public override UnityAction<float> Attack { get => _inputReader.Attack; set => _inputReader.Attack = value; }
 
-        public override void CastAbility() {
-            Debug.Log("Ability!");
-        }
+        public override UnityAction<float> Ability { get => _inputReader.Ability; set => _inputReader.Ability = value; }
+
         protected override bool IsAttackCancellable() {
             throw new System.NotImplementedException();
         }

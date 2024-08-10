@@ -2,11 +2,16 @@ using NewGuild.Combat.Skills;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace NewGuild.Combat
 {
-    public abstract class AtkAbilityController : MonoBehaviour, IAttacking, IAbilityCasting
+    public abstract class AtkAbilityController : MonoBehaviour, IAttacker, IAbilityCaster
     {
+        public abstract UnityAction<float> Attack { get; set; }
+
+        public abstract UnityAction<float> Ability { get; set; }
+
         protected virtual void Start() {
         
         }
@@ -14,10 +19,6 @@ namespace NewGuild.Combat
         protected virtual void Update() {
         
         }
-
-        public abstract void ExecuteAttack();
-
-        public abstract void CastAbility();
 
         protected abstract bool IsAttackCancellable();
 

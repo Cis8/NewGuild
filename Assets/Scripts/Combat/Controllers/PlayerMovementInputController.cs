@@ -14,7 +14,6 @@ namespace NewGuild.Combat
 
         protected override void Start() {
             base.Start();
-            _inputReader.EnablePlayerActions();
         }
 
         public override UnityAction<Vector2> Move { get => _inputReader.Move; set => _inputReader.Move = value; }

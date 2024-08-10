@@ -19,7 +19,7 @@ namespace NewGuild.Combat
 
         private void Awake() {
             if (!TryGetComponent(out _movementController)) {
-                var message = "Player does not have an IMover component";
+                var message = "No IMover component found on " + gameObject.name;
                 Debug.LogError(message);
                 throw new System.Exception(message);
             }
@@ -67,9 +67,6 @@ namespace NewGuild.Combat
 
         private void MoveEntity(Vector3 movementVector) {
             transform.position += movementVector * Time.deltaTime * MovementSpeed;
-        }
-        public bool IsMoving() {
-            return _movementTimer.IsRunning;
         }
     }
 }

@@ -12,13 +12,13 @@ namespace NewGuild.Combat
     public class InputReader : ScriptableObject, IPlayerActions {
         private event UnityAction<Vector2> _move = delegate { };
         private event UnityAction<bool> _dash = delegate { };
-        private event UnityAction _attack = delegate { };
-        private event UnityAction _ability = delegate { };
+        private event UnityAction<float> _attack = delegate { };
+        private event UnityAction<float> _ability = delegate { };
 
         public UnityAction<Vector2> Move { get => _move; set => _move = value; }
         public UnityAction<bool> Dash { get => _dash; set => _dash = value; }
-        public UnityAction Attack { get => _attack; set => _attack = value; }
-        public UnityAction Ability { get => _ability; set => _ability = value; }
+        public UnityAction<float> Attack { get => _attack; set => _attack = value; }
+        public UnityAction<float> Ability { get => _ability; set => _ability = value; }
 
         PlayerInputActions _inputActions;
 
@@ -27,9 +27,6 @@ namespace NewGuild.Combat
                 _inputActions = new PlayerInputActions();
                 _inputActions.Player.SetCallbacks(this);
             }
-        }
-
-        public void EnablePlayerActions() {
             _inputActions.Enable();
         }
 
@@ -50,13 +47,13 @@ namespace NewGuild.Combat
 
         public void OnAttack(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started) {
-                _attack.Invoke();
+                _attack.Invoke(context.ReadValue<float>());
             }
         }
 
         public void OnAbility(InputAction.CallbackContext context) {
             if (context.phase == InputActionPhase.Started) {
-                _ability.Invoke();
+                _ability.Invoke(context.ReadValue<float>());
             }
         }
 

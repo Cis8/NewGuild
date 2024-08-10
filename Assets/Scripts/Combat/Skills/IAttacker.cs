@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace NewGuild.Combat
 {
-    public interface IAttacking
+    public interface IAttacker
     {
-        public void ExecuteAttack();
+        public UnityAction<float> Attack { get; set; }
     }
 }

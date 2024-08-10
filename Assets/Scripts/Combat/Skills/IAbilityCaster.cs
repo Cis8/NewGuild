@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace NewGuild.Combat
 {
-    public interface IAbilityCasting
+    public interface IAbilityCaster
     {
-        public void CastAbility();
+        public UnityAction<float> Ability { get; set; }
     }
 }
