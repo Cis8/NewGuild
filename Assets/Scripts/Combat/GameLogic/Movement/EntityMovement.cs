@@ -68,5 +68,8 @@ namespace NewGuild.Combat
         private void MoveEntity(Vector3 movementVector) {
             transform.position += movementVector * Time.deltaTime * MovementSpeed;
         }
+        public bool IsMoving() {
+            return _movementTimer.IsRunning;
+        }
     }
 }
