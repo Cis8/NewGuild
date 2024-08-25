@@ -15,6 +15,8 @@ namespace NewGuild.Combat.Utils
         // The IDamageable component is given as output through an out parameter
         public static bool IsDamageableOpponent(this GameObject self, GameObject other, out IDamageable damageable) {
             damageable = null;
+            if (self == null) throw new Exception("self is null.");
+            if (other == null) throw new Exception("other is null.");
             if (self.layer != other.layer) {
                 if (GetMainGameObject(other).TryGetComponent(out damageable)) {
                     return true;
@@ -32,7 +34,7 @@ namespace NewGuild.Combat.Utils
         public static GameObject GetMainGameObject(GameObject gameObject) {
             if (!gameObject.TryGetComponent(out MainGameObjectRef mainGameObjectRef)) {
                 // if the component is not present, throw an exception
-                throw new System.Exception($"MainGameObjectRef not found in {gameObject.name}. Add the MainGameObjectRef and bind the MainGameObject for such an object.");
+                throw new Exception($"MainGameObjectRef not found in {gameObject.name}. Add the MainGameObjectRef and bind the MainGameObject for such an object.");
             }
             return mainGameObjectRef.MainGameObject;
         }

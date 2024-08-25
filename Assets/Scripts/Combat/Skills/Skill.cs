@@ -9,19 +9,24 @@ namespace NewGuild.Combat.Skills {
     public abstract class Skill : ScriptableObject {
         [NonSerialized] private GameObject _self;
 
-        private float _cooldown;
-        private Animator _animator;
+        [SerializeField] private float _cooldown;
+        [NonSerialized] protected Animator _animator;
 
         [NonSerialized] private bool _onCooldown = false;
 
-        public GameObject Self { get => _self; set => _self = value; }
+        public GameObject Self { get => _self; private set => _self = value; }
+
+        public void SetupSkill(GameObject self, Animator animator) {
+            _animator = animator;
+            _self = self;
+        }
 
         /// <summary>
         /// It executes the logic assigned to the start of the skill.
         /// Some checks may be performed to ensure the skill is executed.
         /// For simple abilities, all the logic relies here.
         /// </summary>
-        /// <param name="other">Is the target of the skill. It must be the Main Game Object of the entity.</param>
+        /// <param name="other">Is the target of the skill.</param>
         abstract public void StartSkill(GameObject other = null);
 
         // TODO add HoldSkill

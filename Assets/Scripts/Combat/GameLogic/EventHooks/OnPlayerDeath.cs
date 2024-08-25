@@ -35,7 +35,6 @@ namespace NewGuild
         private void HandleDeath(GameObject entity) {
             if (entity == gameObject) {
                 Instantiate(_corpse, transform.position, transform.rotation, transform.parent);
-                Destroy(gameObject);
             }
         }
     }

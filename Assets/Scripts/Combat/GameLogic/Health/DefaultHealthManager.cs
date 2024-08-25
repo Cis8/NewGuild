@@ -39,6 +39,7 @@ namespace NewGuild.Combat
 
         public override void Die() {
             _healthEventManager.EntityDied(gameObject);
+            Destroy(gameObject);
         }
     }
 }

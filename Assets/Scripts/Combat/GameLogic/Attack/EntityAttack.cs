@@ -6,6 +6,7 @@ using UnityEngine;
 namespace NewGuild.Combat {
     public class EntityAttack : MonoBehaviour, IAttacking {
         protected IAttacker _attackController;
+        [SerializeField] protected WeaponController _weaponController;
         private Timer _attackTimer;
 
         public Timer AttackTimer { get => _attackTimer; set => _attackTimer = value; }
@@ -28,9 +29,9 @@ namespace NewGuild.Combat {
             _attackTimer.Tick(Time.deltaTime);
         }
 
-        // This method is called by the StateMAchine to trigger the attack
+        // This method is called by the StateMachine to trigger the attack
         public void Attack() {
-            Debug.Log("Attack!");
+            _weaponController.StartAttack();
         }
 
         protected void OnAttack(float intentionToAttack) {
